@@ -1,16 +1,6 @@
-/* template literal will go here. 
+/*  
 This is the section that will create the actual markdown 'code" that will
 be saved into the readme.md file. 
-
-` template literal will have things like 
-###{ name of project }
-
-## { description section}
-
-## { table of contents }
-        include working links that navigate to sections of readme
-## { installation }
-
 
 
 GIVEN a command-line application that accepts user input
@@ -35,7 +25,73 @@ module.exports will export this to index.js
 */
 
 
+module.exports = templateData => {
+    const { github, email, project, description, license, install, test, usage, contribution } = templateData
+  
+    console.log(templateData);
+    
+    function renderLicenseSection(license) {
+        if (license) {
+                return `
+            This project is using the [${license}](https://choosealicense.com/licenses/${license}/) license.
+            `
+        }        
+    };
 
 
+    function renderLicenseBadge(license) {
+        if (license) {
+            return `![license] (https://img.shields.io/badge/License-${license}-blueviolet)`
+            } else {
+                return ''
+            }
+    };
 
-module.exports = generateFile;
+    return `
+    ${renderLicenseBadge(license)}
+
+    # ${project}
+
+    ## Description
+    
+    ${description}
+    
+    ## Table of Contents
+        - [Installation] (#installation)
+        - [Usage] (#usage)
+        - [License] (#license)
+        - [Contributing] (#contributing)
+        - [Tests] (#tests)
+        - [Questions] (#questions)
+
+    ## Installation
+    
+    ${install}
+
+    ## Usage
+
+    ${usage}
+
+    ## License
+
+    
+    ${renderLicenseSection(license.join())}
+
+
+    ## Contributing
+
+    ${contribution}
+
+    ## Tests
+
+    ${test}
+
+    # Questions
+
+    Link to my GitHub: https://github.com/${github}
+
+    Please feel free to email me at ${email} with any questions you might have. 
+        `;
+};
+
+

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-//const generateFile = require('./src/markdown-template.js');
+const generateFile = require('./src/markdown-template.js');
 
 
 /* section for asking user following questions:
@@ -78,9 +78,10 @@ const promptUser = () => {
             }
         },
         {
-            type: 'input',
+            type: 'checkbox',
             name: 'license',
-            message: 'What kind of license should your project have? (ex. MIT)',
+            message: 'What kind of license should your project have? (Please choose one of the following)',
+            choices: ['MIT', 'apache-2.0', 'GNU GPLv3', 'Mozilla Public License 2.0', 'N/A']
         },
         {
             type: 'input',
@@ -100,7 +101,21 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'contribution',
-            message: 'WWhat does the user need to know about contributing to the repo?'
+            message: 'What does the user need to know about contributing to the repo?'
         },
     ])
 };
+
+promptUser()
+.then(readmeData => {
+    return generateFile(readmeData);
+})
+.then(fileContent => {
+    fs.writeFile('./testReadMe.md', fileContent, err => {
+        if (err) throw new Error(err);
+        console.log('Test Done');
+    });
+})
+.catch(err => {
+    console.log(err);
+  });
