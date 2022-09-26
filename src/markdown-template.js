@@ -28,12 +28,11 @@ module.exports will export this to index.js
 module.exports = templateData => {
     const { github, email, project, description, license, install, test, usage, contribution } = templateData
   
-    console.log(templateData);
     
     function renderLicenseSection(license) {
         if (license) {
                 return `
-            This project is using the [${license}](https://choosealicense.com/licenses/${license}/) license.
+This project is using the [${license}](https://choosealicense.com/licenses/${license}/) license.
             `
         }        
     };
@@ -41,57 +40,57 @@ module.exports = templateData => {
 
     function renderLicenseBadge(license) {
         if (license) {
-            return `![license] (https://img.shields.io/badge/License-${license}-blueviolet)`
+            return `![license](https://img.shields.io/badge/License-${license}-blueviolet)`
             } else {
                 return ''
             }
     };
 
-    return `
-    ${renderLicenseBadge(license)}
+return `
 
-    # ${project}
+# ${project}
 
-    ## Description
+## Description
+${renderLicenseBadge(license)}
+
+
+${description}
     
-    ${description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
     
-    ## Table of Contents
-        - [Installation] (#installation)
-        - [Usage] (#usage)
-        - [License] (#license)
-        - [Contributing] (#contributing)
-        - [Tests] (#tests)
-        - [Questions] (#questions)
+${install}
 
-    ## Installation
-    
-    ${install}
+## Usage
 
-    ## Usage
+${usage}
 
-    ${usage}
+## License
 
-    ## License
-
-    
-    ${renderLicenseSection(license.join())}
+${renderLicenseSection(license.join())}
 
 
-    ## Contributing
+## Contributing
 
-    ${contribution}
+${contribution}
 
-    ## Tests
+## Tests
 
-    ${test}
+${test}
 
-    # Questions
+# Questions
 
-    Link to my GitHub: https://github.com/${github}
+Link to my GitHub: https://github.com/${github}
 
-    Please feel free to email me at ${email} with any questions you might have. 
-        `;
+Please feel free to email me at ${email} with any questions you might have. 
+ `;
 };
 
 

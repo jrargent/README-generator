@@ -81,7 +81,7 @@ const promptUser = () => {
             type: 'checkbox',
             name: 'license',
             message: 'What kind of license should your project have? (Please choose one of the following)',
-            choices: ['MIT', 'apache-2.0', 'GNU GPLv3', 'Mozilla Public License 2.0', 'N/A']
+            choices: ['MIT', 'apache-2.0', 'gpl-3.0', 'mpl-2.0', 'agpl-3.0', 'bsl-1.0', 'unlicense']
         },
         {
             type: 'input',
@@ -111,9 +111,9 @@ promptUser()
     return generateFile(readmeData);
 })
 .then(fileContent => {
-    fs.writeFile('./testReadMe.md', fileContent, err => {
+    fs.writeFile('./dist/README.md', fileContent, err => {
         if (err) throw new Error(err);
-        console.log('Test Done');
+        console.log("The README file has been saved to the dist folder of the repo.");
     });
 })
 .catch(err => {
