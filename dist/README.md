@@ -1,12 +1,12 @@
 
 
-# README Generator
+# asdfa
 
 ## Description
 ![license](https://img.shields.io/badge/License-unlicense-blueviolet)
 
 
-This project is meant to assist users in automatically creating a README file for their projects.
+asdf
     
 ## Table of Contents
 - [Installation](#installation)
@@ -18,11 +18,11 @@ This project is meant to assist users in automatically creating a README file fo
 
 ## Installation
     
-npm i
+asdf
 
 ## Usage
 
-N/A
+asdf
 
 ## License
 
@@ -33,15 +33,15 @@ This project is using the [unlicense](https://choosealicense.com/licenses/unlice
 
 ## Contributing
 
-Please feel free to contribute to making this better.
+asdf
 
 ## Tests
 
-npm test
+asdf
 
 # Questions
 
-Link to my GitHub: https://github.com/jrargent
+Link to my GitHub: https://github.com/asdf
 
-Please feel free to email me at jrargent42@gmail.com with any questions you might have. 
+Please feel free to email me at asdf with any questions you might have. 
  

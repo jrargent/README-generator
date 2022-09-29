@@ -78,7 +78,7 @@ const promptUser = () => {
             }
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'license',
             message: 'What kind of license should your project have? (Please choose one of the following)',
             choices: ['MIT', 'apache-2.0', 'gpl-3.0', 'mpl-2.0', 'agpl-3.0', 'bsl-1.0', 'unlicense']

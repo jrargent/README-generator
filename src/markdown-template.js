@@ -74,7 +74,7 @@ ${usage}
 
 ## License
 
-${renderLicenseSection(license.join())}
+${renderLicenseSection(license)}
 
 
 ## Contributing
