@@ -16,7 +16,8 @@ There is no website as this a node.js program. Instead, please clone or download
 
 ## Link to example README created by this program
 
-[insert link here]
+[README.md](https://github.com/jrargent/README-generator/files/9669858/README.md)
+
 
 ## Installation
 
@@ -47,7 +48,7 @@ THEN I am taken to the corresponding section of the README
 ## Video Walkthrough
 
 Please access a walkthrough of using this program at the following link:
-[insert link here]
+https://drive.google.com/file/d/1pUcl2ZaW3WMgHh00h1h3oO9YyCmIbYHp/view
 
 
 ## Things I learned in this project
